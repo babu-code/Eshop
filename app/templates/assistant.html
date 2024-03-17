@@ -1,0 +1,62 @@
+{% extends 'home.html' %}
+{% block container %}
+ <div class="top-pad">
+ <ul class="list-group" id="chat-list">
+ <li class="list-group-item">
+ <span class="badge">Assistant</span>
+ Hello 👋😄 how can I help you today?
+ </li>
+ </ul>
+ <div class="input-group">
+ <input type="text" class="form-control"
+ name="message" placeholder="Enter your
+ query" aria-describedby="chat-input">
+ <span class="input-group-btn">
+ <button class="btn btn-success" type="button" data-loading-text="Loading..." id="send-message">Send</button>
+ </span>
+ </div>
+ </div>
+
+ <script>
+    function appendToChatList(mode, message) {
+        $( "#chat-list" ).append( '<li class="list-group-item"><span class="badge">' + mode +
+        '</span>' + message + '</li>' );
+        }
+        $(document).ready(function(){
+        $('#send-message').click(function() {
+        console.log('button-clicked!')
+        var send_btn = $(this)
+        const inputChat = document.querySelector
+        ( 'input[name="message"]' );
+        var message = inputChat.value;
+        appendToChatList('You', message);
+        inputChat.value = '';
+        $.ajax({
+        url: '/chat_gpt',
+        type: 'POST',
+        contentType:'application/json',
+        dataType: "json",
+        data:JSON.stringify({msg: message }),
+        success:function(response){
+            console.log(response);
+        }
+        })
+        .done(function(data) {
+        appendToChatList('Assistant', data.message);
+        // send_btn.button('reset');
+        console.log("Success!")
+        })
+        .fail(function(jqXHR, textstatus, errorThrown){
+            console.error("Error:", +textstatus, errorThrown);
+            // send_btn.button('reset');
+            console.log("Fail")
+        });
+    
+        });
+    });
+        
+    </script>
+{% endblock %}
+
+
+

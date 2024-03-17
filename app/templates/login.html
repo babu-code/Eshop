@@ -1,0 +1,39 @@
+<!-- {% from '_helpers.html' import render_field %}  -->
+{% extends 'base.html' %}
+{% block container %}
+    <h2 style="text-align: center;">Login to your account</h2>
+    <form class="login-form" action="" method="POST">
+        {{ form.hidden_tag( ) }}
+        <p>
+            {{ form.email.label }}
+            {{ form.email(class="form-input")}}
+            {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.password.label }}
+            {{ form.password(class="form-input") }}
+            {% for error in form.password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        
+        <p>
+            {{ form.remember.label }}
+            {{ form.remember(class="form-input")}}
+        </p>
+
+        <p>
+            {{ form.submit(class="submit-btn")}}
+        </p>
+        <small><a href="{{url_for('reset_password_request')}}">Forgot password?</a></small><br>
+        <small>Don't have an account?<a href="{{url_for('register')}}">Create an account</a></small>
+
+    </form>
+<style>
+    span{
+        color:red;
+    }
+</style>
+{% endblock %}

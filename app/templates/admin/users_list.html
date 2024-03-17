@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block container %}
+    <table>
+            <thead>
+                <th >Id</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password Hash</th>
+                <th>Is Admin?</th>
+                <th>Delete User Account</th>
+            </thead>
+            {% for user in users %}
+            <tbody>
+                <tr>
+                    <td><a class="a-white" href="">{{ user.id }}</a></td>
+                    <td><a class="a-white" href="">{{ user.username[0:6] }}...</a></td>
+                    <td>{{ user.email[0:6] }}...</td>
+                    <td>{{ user.password[0:8] }}...</td>
+                    <td>{{ user.is_admin() }}</td>
+                    <td>
+                        {% if user.id != current_user.id %}
+                        <form action="{{url_for('delete_user', user_id=user.id)}}" method="post">
+                            <button class="delete-user">Delete {{user.username[0:5]}}...</button>
+                        </form>
+                        {% else %}
+                            current user
+                        {% endif %}
+                    </td>
+                </tr>
+            </tbody>
+             {% endfor %}
+        
+    </table>
+{% endblock %}

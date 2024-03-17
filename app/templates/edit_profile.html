@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block container %}
+    <h2 style="text-align:center">Edit Your Profile</h2>
+    <form  class="login-form" action="" method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag( ) }}
+        <p>
+            {{ form.username.label() }}
+            {{ form. username(class="form-input")}}
+            {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+
+        </p>
+        <p>
+            {{ form.email.label() }}
+            {{ form.email(class="form-input")}}
+            {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.phone.label() }}
+            {{ form.phone(class="form-input")}}
+            {% for error in form.phone.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.city.label() }}
+            {{ form.city(class="form-input")}}
+            {% for error in form.city.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.address.label() }}
+            {{ form.address(class="form-input") }}
+            {% for error in form.address.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        
+        <p>
+            {{ form.submit(class="submit-btn")}}
+        </p>
+    </form>
+
+<style>
+    span{
+        color:red;
+    }
+</style>
+{% endblock %}

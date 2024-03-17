@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block container %}
+    <h2 style="text-align:center">Join Us Today</h2>
+    <form action="" class="login-form" method="POST">
+        {{ form.hidden_tag( ) }}
+        <p>
+            {{ form.username.label() }}
+            {{ form. username(class="form-input")}}
+            {% for error in form.username.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+
+        </p>
+        <p>
+            {{ form.email.label() }}
+            {{ form.email(class="form-input")}}
+            {% for error in form.email.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.password.label() }}
+            {{ form.password(class="form-input") }}
+            {% for error in form.password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p> 
+            {{ form.confirm_password.label() }}
+            {{ form.confirm_password(class="form-input") }}
+            {% for error in form.confirm_password.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.phone.label() }}
+            {{ form.phone(class="form-input")}}
+            {% for error in form.phone.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.address.label() }}
+            {{ form.address(class="form-input")}}
+            {% for error in form.address.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.city.label() }}
+            {{ form.city(class="form-input")}}
+            {% for error in form.city.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </p>
+        
+
+        <p>
+            {{ form.submit(class="submit-btn")}}
+        </p>
+    </form>
+
+<style>
+    span{
+        color:red;
+    }
+</style>
+{% endblock %}

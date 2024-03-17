@@ -1,0 +1,40 @@
+{% extends 'base.html' %} 
+{% block container %}
+
+<h2 style="color:rgb(31, 34, 135)">Cheap Deals</h2>
+<div class="top">
+   
+    {% for product in products.items %}
+    <div class="top-pad offset-1 col-sm-10">
+            <div class="card text-center">
+                <small style=" padding:2px;color:white;background-color:green; justify-self: flex-end;">-{{ product.discount }}%</small>
+                        <div class="card-body">
+                            <a href="{{ url_for('product',id=product.id)}}">
+                                <h2>
+                                    {% if product.image_path %}
+                                        <img src="{{url_for('static', filename='uploads/' +product.image_path) }}" class="card-img"/>
+                                    {% endif %}
+                                        <a href="{{ url_for('product', id=product.id)
+                                        }}">{{ product.name }}</a>
+                                        <small style="color:green">Ksh {{ product.selling_price() }}</small>
+                                </h2>
+                            </a>
+                        </div>
+            </div>
+    
+    </div>
+    {% endfor %}
+    
+</div>
+<div>
+    
+    {% for page_num in products.iter_pages() %}
+    {% if page_num %}
+       <a href="{{url_for('cheapest_products', page=page_num)}}">{{ page_num }}</a>
+       {% else %}
+       ...
+   {% endif %}
+   {% endfor %}
+</div>
+
+{% endblock %}

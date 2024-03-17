@@ -1,0 +1,142 @@
+2024-01-12 13:23:26,357 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 13:24:00,181 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:08:01,067 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:29:03,243 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:30:24,782 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:33:38,539 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:36:20,094 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:36:52,263 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:38:37,617 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:44:56,452 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:45:14,191 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:47:09,602 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 20:58:59,160 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 21:09:57,110 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 21:09:58,714 ERROR: Exception on /product/1 [GET] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 101, in product
+    return render_template('product.html', product=product)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Py\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Py\Eshop\app\templates\product.html", line 1, in top-level template code
+    {% extends 'base.html' %}
+  File "C:\Py\Eshop\app\templates\base.html", line 69, in top-level template code
+    {% block container %} {% endblock %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\templates\product.html", line 57, in block 'container'
+    {% for product in product.category %}
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'Category' object is not iterable
+2024-01-12 22:00:34,607 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-13 08:55:40,214 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-13 08:56:15,027 ERROR: Exception on /chat_gpt [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 384, in chat_gpt
+    response = openai.Completion.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\openai\api_resources\completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\openai\api_resources\abstract\engine_api_resource.py", line 153, in create
+    response, _, api_key = requestor.request(
+                           ^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\openai\api_requestor.py", line 298, in request
+    resp, got_stream = self._interpret_response(result, stream)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\openai\api_requestor.py", line 700, in _interpret_response
+    self._interpret_response_line(
+  File "C:\Py\venv\Lib\site-packages\openai\api_requestor.py", line 765, in _interpret_response_line
+    raise self.handle_error_response(
+openai.error.RateLimitError: You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.
+2024-01-16 12:06:51,340 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-18 19:10:58,273 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-18 19:54:09,190 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-19 09:59:20,098 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-19 09:59:32,774 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-22 09:01:27,779 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-22 19:45:09,734 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-22 20:06:33,056 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-22 20:08:30,290 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-22 20:09:35,074 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 09:40:47,228 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 09:40:57,446 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 18:15:43,182 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 18:24:50,234 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 18:25:52,535 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 18:26:37,361 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 18:58:31,884 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 19:02:38,741 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 19:05:11,201 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 19:07:17,571 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-23 19:12:26,197 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 09:09:59,669 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 17:49:24,798 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:02:00,173 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:03:29,362 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:04:04,768 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:07:46,125 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:08:56,915 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:11:44,128 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:12:42,289 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:14:29,214 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:17:57,222 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:18:59,381 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:21:42,396 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:25:36,159 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:27:54,262 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:28:29,474 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:29:54,138 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:35:08,448 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:36:33,745 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:37:07,572 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:38:14,695 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:38:47,141 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:42:29,718 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 18:42:52,868 ERROR: Exception on /pay [GET] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'mpesa_express' did not return a valid response. The function either returned None or ended without a return statement.
+2024-01-25 18:43:27,067 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]

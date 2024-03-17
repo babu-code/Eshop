@@ -1,0 +1,133 @@
+2024-01-05 15:24:10,075 ERROR: Exception on /reset_password_request [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 62, in reset_password_request
+    send_reset_request(user)
+  File "C:\Py\Eshop\app\utils.py", line 56, in send_reset_request
+    token = user.get_reset_password_token()
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\models.py", line 38, in get_reset_password_token
+    app.config['SECRET_KE'], algorithm='HS256')
+    ~~~~~~~~~~^^^^^^^^^^^^^
+KeyError: 'SECRET_KE'
+2024-01-05 15:24:57,011 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-05 15:24:59,432 ERROR: Exception on /reset_password_request [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 62, in reset_password_request
+    send_reset_request(user)
+  File "C:\Py\Eshop\app\utils.py", line 57, in send_reset_request
+    send_email('Eshop Password Reset',sender= app.config['ADMINS'][0],
+TypeError: send_email() missing 1 required positional argument: 'html_body'
+2024-01-05 15:27:56,322 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-05 15:28:04,205 ERROR: Exception on /reset_password_request [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 62, in reset_password_request
+    send_reset_request(user)
+  File "C:\Py\Eshop\app\utils.py", line 57, in send_reset_request
+    send_email('Eshop Password Reset',sender= app.config['ADMINS'][0],
+  File "C:\Py\Eshop\app\utils.py", line 53, in send_email
+    mail.send(msg)
+  File "C:\Py\venv\Lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "C:\Py\venv\Lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 827, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+2024-01-05 15:28:44,542 ERROR: Exception on /reset_password_request [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 62, in reset_password_request
+    send_reset_request(user)
+  File "C:\Py\Eshop\app\utils.py", line 57, in send_reset_request
+    send_email('Eshop Password Reset',sender= app.config['ADMINS'][0],
+  File "C:\Py\Eshop\app\utils.py", line 53, in send_email
+    mail.send(msg)
+  File "C:\Py\venv\Lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "C:\Py\venv\Lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 827, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+2024-01-05 15:31:12,285 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]

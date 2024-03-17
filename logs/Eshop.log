@@ -1,0 +1,125 @@
+2024-01-25 21:39:23,759 ERROR: Exception on /pay [GET] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1487, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1506, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1801, in make_response
+    raise TypeError(
+TypeError: The view function for 'mpesa_express' did not return a valid response. The function either returned None or ended without a return statement.
+2024-01-25 21:39:32,623 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-25 21:49:00,534 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 11:15:58,227 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 11:16:13,126 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 11:21:32,050 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 11:22:47,637 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 11:24:47,400 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 12:15:24,484 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 12:40:58,776 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 12:42:00,690 ERROR: Exception on /pay [GET] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 468, in mpesa_express
+    am = float(amt)
+         ^^^^^^^^^^
+TypeError: float() argument must be a string or a real number, not 'NoneType'
+2024-01-26 14:19:09,174 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 14:20:30,001 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 14:58:04,830 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 14:59:56,281 ERROR: Exception on /payment [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 397, in payment
+    charge = stripe.Charge.create(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\stripe\_charge.py", line 2327, in create
+    cls._static_request(
+  File "C:\Py\venv\Lib\site-packages\stripe\_api_resource.py", line 166, in _static_request
+    response, api_key = requestor.request(method_, url_, params, headers)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\stripe\_api_requestor.py", line 114, in request
+    resp = self.interpret_response(rbody, rcode, rheaders)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\stripe\_api_requestor.py", line 425, in interpret_response
+    self.handle_error_response(rbody, rcode, resp.data, rheaders)
+  File "C:\Py\venv\Lib\site-packages\stripe\_api_requestor.py", line 170, in handle_error_response
+    raise err
+stripe._error.InvalidRequestError: Request req_Iu42DvYcVmUBhi: Invalid currency: ksh. Stripe currently supports these currencies: usd, aed, afn, all, amd, ang, aoa, ars, aud, awg, azn, bam, bbd, bdt, bgn, bhd, bif, bmd, bnd, bob, brl, bsd, bwp, byn, bzd, cad, cdf, chf, clp, cny, cop, crc, cve, czk, djf, dkk, dop, dzd, egp, etb, eur, fjd, fkp, gbp, gel, gip, gmd, gnf, gtq, gyd, hkd, hnl, hrk, htg, huf, idr, ils, inr, isk, jmd, jod, jpy, kes, kgs, khr, kmf, krw, kwd, kyd, kzt, lak, lbp, lkr, lrd, lsl, mad, mdl, mga, mkd, mmk, mnt, mop, mur, mvr, mwk, mxn, myr, mzn, nad, ngn, nio, nok, npr, nzd, omr, pab, pen, pgk, php, pkr, pln, pyg, qar, ron, rsd, rub, rwf, sar, sbd, scr, sek, sgd, shp, sle, sos, srd, std, szl, thb, tjs, tnd, top, try, ttd, twd, tzs, uah, ugx, uyu, uzs, vnd, vuv, wst, xaf, xcd, xof, xpf, yer, zar, zmw, usdc, btn, ghs, eek, lvl, svc, vef, ltl, sll, mro
+2024-01-26 15:02:21,201 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 15:03:10,718 ERROR: Exception on /payment [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 397, in payment
+    charge = stripe.Charge.create(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\stripe\_charge.py", line 2327, in create
+    cls._static_request(
+  File "C:\Py\venv\Lib\site-packages\stripe\_api_resource.py", line 166, in _static_request
+    response, api_key = requestor.request(method_, url_, params, headers)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\stripe\_api_requestor.py", line 114, in request
+    resp = self.interpret_response(rbody, rcode, rheaders)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\stripe\_api_requestor.py", line 425, in interpret_response
+    self.handle_error_response(rbody, rcode, resp.data, rheaders)
+  File "C:\Py\venv\Lib\site-packages\stripe\_api_requestor.py", line 170, in handle_error_response
+    raise err
+stripe._error.InvalidRequestError: Request req_0TOqhmBVKWWeZp: Invalid currency: ksh. Stripe currently supports these currencies: usd, aed, afn, all, amd, ang, aoa, ars, aud, awg, azn, bam, bbd, bdt, bgn, bhd, bif, bmd, bnd, bob, brl, bsd, bwp, byn, bzd, cad, cdf, chf, clp, cny, cop, crc, cve, czk, djf, dkk, dop, dzd, egp, etb, eur, fjd, fkp, gbp, gel, gip, gmd, gnf, gtq, gyd, hkd, hnl, hrk, htg, huf, idr, ils, inr, isk, jmd, jod, jpy, kes, kgs, khr, kmf, krw, kwd, kyd, kzt, lak, lbp, lkr, lrd, lsl, mad, mdl, mga, mkd, mmk, mnt, mop, mur, mvr, mwk, mxn, myr, mzn, nad, ngn, nio, nok, npr, nzd, omr, pab, pen, pgk, php, pkr, pln, pyg, qar, ron, rsd, rub, rwf, sar, sbd, scr, sek, sgd, shp, sle, sos, srd, std, szl, thb, tjs, tnd, top, try, ttd, twd, tzs, uah, ugx, uyu, uzs, vnd, vuv, wst, xaf, xcd, xof, xpf, yer, zar, zmw, usdc, btn, ghs, eek, lvl, svc, vef, ltl, sll, mro
+2024-01-26 15:04:28,233 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 15:06:57,579 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 15:16:01,228 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 15:46:24,041 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-26 15:54:51,093 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-27 15:13:33,410 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-28 09:16:41,528 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-28 09:23:29,367 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-28 11:02:12,478 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-28 16:53:04,871 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-29 08:54:39,517 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-29 09:47:40,699 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-01-29 09:51:38,111 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]
+2024-02-10 04:58:45,353 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:47]

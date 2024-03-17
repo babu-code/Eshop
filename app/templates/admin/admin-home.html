@@ -1,0 +1,13 @@
+{% extends 'base.html' %} 
+{% block container %}
+ <div class="admin-home">
+    <h2>Hello Admin! 😄</h2>
+    <ul>
+      <li><a href="{{url_for('users_list')}}"><img src="{{url_for('static', filename='app_pics/profile.png')}}" alt=""> <p>Users List</p></a></li>
+      <li><a href="{{url_for('create_user')}}"><img src="{{url_for('static', filename='app_pics/product-list.png')}}" alt=""><p>Create User</p> </a></li>
+      <li><a href="{{url_for('product_list')}}"><img src="{{url_for('static', filename='app_pics/items.png')}}" alt=""><p>Product List</p> </a></li>
+      
+    </ul>
+
+  </div>
+{% endblock %}

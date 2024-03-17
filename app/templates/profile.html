@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block container %}
+
+    <form action="" method="get">
+        <fieldset>
+            <legend>Customer Information</legend>
+            <div>
+                <div>
+                    <h3>Username: {{ user.username }}<br> 
+                        <p>Email: {{ user.email }}</p> 
+                        <p>City: {{ user.city }}</p>
+                        <p>Phone: {{user.phone }}</p>
+                        <p>Address: {{ user.address}}</p>
+                        
+                    </h3> 
+                    <p style="display: flex;">
+                    <form action="" method="post">
+            
+                        <a class="turquoise" href="{{url_for('edit_profile')}}">Edit Profile</a>
+                        <br>
+                    </form>
+                    
+                    <p>
+                        
+                    </p>
+                <p>
+                    <a class="turquoise" href="{{url_for('logout')}}">Logout<img  class="icon"  style="width:20px; height:20px;" src="{{url_for('static', filename='icons/switch.png')}}" alt=""></a>
+
+                </p>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block container %}    
+   <h2>Orders</h2>    
+   <div class="container" style="outline: 1px solid gray; background-color: white;">
+    <div class="order-details">
+        <h3>Order Details</h3>
+        <span style="font-weight: bold;">Invoice: <span style="color: goldenrod;">{{orders.invoice }}</span></span>
+    <br>
+    <span style="font-weight: bold;">Status: <span style="color: goldenrod;">{{orders.status }}</span></span>
+    <br>
+    <span style="font-weight: bold;">Customer Name : <span style="color: goldenrod;">{{ customer.username }}</span></span>
+    <br>
+    <span style="font-weight: bold;">Email : <span style="color: goldenrod;">{{ customer.email }}</span></span> 
+    <br>
+    </div>
+    <table class="table">
+        <thead>
+            <th>Sr</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Update Qty</th>
+            <th>Quantity</th>
+            <th>Discount</th>
+            <th>Subtotal</th>
+            <th>Update</th>
+            
+        </thead>
+        <tbody>
+            {% for key, product in orders.orders.items() %}
+            {% set discount= "%0.2f" |format((product.discount/100) * product.price|float) %}
+            <tr>
+                <td>{{loop.index}}</td>                <td>{{ product.name }}</td>
+                <td>{{ product.price }}</td>
+                <form action="{{url_for('update_cart', code=key)}}" method="post">
+                    <td> <input type="number" name="quantity" min="1" max="10" value="{{product.quanitity}}" id=""></td>
+                    <td>{{ product.quanitity }}</td>
+                    {% if product.discount>0  %}
+                        <td>{{ product.discount|int  }}%</td>
+                    {% endif %}
+                    {% set subtotal = product.quanitity|int * product.price|float %}
+                    <td>{{ "%0.2f"|format((subtotal|float) - discount|float)  }}</td>
+                    <!-- <td>{{ product.subtotal }}</td> -->
+                    <td><button type="submit">Update</button></td>
+                </form>                
+                
+            </tr>
+        {% endfor %}
+
+        <tr><td>&nbsp;</td></tr>
+        <tr><td>&nbsp;</td></tr>
+        
+        <tr>
+            
+            <td colspan="2">VAT: <span style="color:goldenrod">Ksh {{ tax }}</span></td>
+            <td colspan="6">Grand Total: <span style="color:goldenrod">Ksh {{ grand_total }}</span></td>
+            <td colspan="6">
+            
+        </tr>
+        <tr>
+            <td> &nbsp;    </td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="/">Continue Shopping</a>
+        </tr>
+        </tbody>
+    </table>
+    <h3>Payment Options:</h3>
+    <!-- <form action="{{url_for('get_pdf', invoice=orders.invoice)}}" method="post">
+        <button type="submit">Get Pdf</button>
+    </form> -->
+    <form action="">
+        <h5>1.Pay with M-pesa:</h5>
+       <button id="mpesa-btn" type="submit">M-pesa</button>
+    </form>
+    <p></p>
+    <form action="{{url_for('payment')}}" method="POST">
+        <h5>2.Pay with Card</h5>
+        {% set amount = grand_total.replace('.', "") %}
+        <input type="hidden" name="amount" value="{{amount}}">
+        <input type="hidden" name="invoice" value="{{orders.invoice}}">
+        <script
+          src="https://checkout.stripe.com/checkout.js"
+          class="stripe-button"
+          data-key="pk_test_51ObJVPKaiOXmNBGLUpgwWHeuopC25YmcK4HQ1NLGlHhwl9CzGoi70NKWL2ztpN6SSiRbT8Db1lWg9XKGH6nsfK1y00fnTVwTpk"
+          data-name="Eshop"
+          data-description="Eshop Product Payment"
+          data-amount="{{amount}}"
+          data-currency="kes">
+        </script>
+      </form>
+</td>
+   </div>
+   <div class="phone-number-modal">
+        <form action= "{{url_for('mpesa_express')}}" >
+            
+            <fieldset>
+                <legend>Enter M-Pesa Number</legend>
+                <label for="phone-number">Phone: +254</label>
+                <input type="hidden" name="total" value="{{grand_total}}">
+
+                <input type="number" name="phone-number"  id=""><br>
+                <button id="modal-pay-btn" type="submit">Pay</button>
+
+            </fieldset>
+        </form>
+   </div>
+{% endblock %}

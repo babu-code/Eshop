@@ -1,0 +1,11 @@
+{% extends 'base.html' %} 
+{% block container %}
+
+<div class="thanks">
+    <h2 id="check-txt" >Thank You for shopping with us !</h2>
+<img id="check-img" src="{{url_for('static', filename='app_pics/check.png')}}" alt="">
+<p id="check-confirmation">Check Your Email for a confirmation</p>
+</div>
+
+<a class="continue-shopping" href="home">Continue Shopping</a>
+{% endblock %}

@@ -1,0 +1,151 @@
+2024-01-08 10:37:57,040 ERROR: Exception on /login [GET] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 50, in login
+    return render_template('login.html', form = form)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\jinja2\environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "C:\Py\venv\Lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "C:\Py\Eshop\app\templates\login.html", line 2, in top-level template code
+    {% extends 'base.html' %}
+  File "C:\Py\Eshop\app\templates\base.html", line 45, in top-level template code
+    <li><a href="{{url_for('view_cart')}}">Cart({{session['shoppingCart']|length}})</a></li>
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1697, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1686, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\werkzeug\routing\map.py", line 947, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'view_cart'. Did you mean 'cart' instead?
+2024-01-08 13:51:27,144 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-08 13:51:32,125 ERROR: Exception on /view_cart [GET] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 235, in view_cart
+    subtotal +=float(product['price'])* int(product['quanitity'])
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'NoneType'
+2024-01-08 15:17:28,526 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-09 10:21:41,701 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-09 10:33:59,983 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-09 10:34:25,060 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-09 10:48:38,402 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-09 10:48:44,568 ERROR: Exception on /reset_password_request [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 69, in reset_password_request
+    send_reset_request(user)
+  File "C:\Py\Eshop\app\utils.py", line 57, in send_reset_request
+    send_email('Eshop Password Reset',sender= app.config['ADMINS'][0],
+  File "C:\Py\Eshop\app\utils.py", line 53, in send_email
+    mail.send(msg)
+  File "C:\Py\venv\Lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+  File "C:\Py\venv\Lib\site-packages\flask_mail.py", line 144, in __enter__
+    self.host = self.configure_host()
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask_mail.py", line 158, in configure_host
+    host = smtplib.SMTP(self.mail.server, self.mail.port)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 827, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.11_3.11.1008.0_x64__qbz5n2kfra8p0\Lib\socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+2024-01-09 22:08:33,952 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-09 22:08:35,930 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-09 22:11:21,230 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-11 20:19:28,526 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-11 21:00:33,942 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-11 21:40:11,648 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-11 21:40:19,937 ERROR: Exception on /clear_session [GET] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 204, in clear_session
+    session['cart'].clear()
+    ~~~~~~~^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\sessions.py", line 79, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'cart'
+2024-01-12 12:16:01,799 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 12:19:37,679 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 12:20:04,760 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 12:24:28,799 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 12:28:46,753 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 12:45:58,876 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 13:05:14,852 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 13:05:56,614 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 13:06:50,231 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 13:07:50,159 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 13:10:36,445 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 13:12:15,935 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 13:12:42,169 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 13:14:50,604 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-12 13:20:09,360 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]

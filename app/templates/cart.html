@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block container %}    
+   <h2>Shopping Cart</h2>    
+   <div class="container">
+    <table class="table">
+        <thead>
+            <th>Sr</th>
+            <th>Img</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Update <br>Qty</th>
+            <!-- <th>Qty</th> -->
+            
+            <th>Sub</th>
+            <th>Update</th>
+            <!-- <th>Delete</th> -->
+        </thead>
+        <tbody>
+            {% for key, product in session['shoppingCart'].items() %}
+            {% set discount= "%0.2f" |format((product.discount/100) * product.price|float) %}
+            <tr>
+                <td>{{loop.index}}</td>
+                <td><img src="{{url_for('static', filename='uploads/'+product.image)}}" width="50" height="45" alt="{{ product.name}}" style="object-fit: cover;"></td>
+                <td>{{ product.name[0:5] }}..</td>
+                <td>{{ product.price }}</td>
+                <form action="{{url_for('update_cart', code=key)}}" method="post">
+                    <td> <input type="number" name="quantity" min="1" max="10" value="{{product.quanitity}}" id=""></td>
+                    <!-- <td>{{ product.quanitity }}</td> 
+                    <!-- {% if product.discount>0  %} -->
+                        <!-- <td>{{ product.discount|int  }}%</td>
+                    {% endif %} -->
+                    <!-- {% set subtotal = product.quanitity|int * product.price|float %} -->
+                    <!-- <td>{{ "%0.2f"|format((subtotal|float) - discount|float)  }}</td>
+                    <td>{{ product.subtotal }}</td> --> 
+                    <td><button type="submit">Update</button></td>
+                </form>
+                
+                    <td><a href="{{url_for('remove_from_cart', id=key)}}">Remove</button></a>
+              
+                
+                
+            </tr>
+        {% endfor %}
+        
+        <tr>
+            
+            <td colspan="2">VAT: <span style="color:green">Ksh {{ tax }}</span></td>
+            <td colspan="3">Grand Total: <span style="color:green">Ksh {{ grandtotal }}</span></td>
+            <td colspan="2"><a href="{{url_for('get_order')}}">Order Now</a></td>
+            
+            </td>
+        </tr>
+        <tr>
+            <td> &nbsp;    </td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="/">Continue Shopping</a>
+        </tr>
+        </tbody>
+    </table>
+   </div>
+{% endblock %}

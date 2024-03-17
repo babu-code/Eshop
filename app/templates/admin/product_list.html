@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block container %}
+<h2>Product List</h2>
+    <table>
+            <thead>
+                <th >Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Stock</th>
+                <th>Delete Product</th>
+            </thead>
+            {% for product in products %}
+            <tbody>
+                <tr>
+                    <td><a class="a-white" href="{{url_for('product', id=product.id)}}">{{ product.id }}</a></td>
+                    <td><a class="a-white" href="{{url_for('product', id=product.id)}}">{{ product.name }}</a></td>
+                    <td>{{ product.category.name }}</td>
+                    <td>ksh {{ product.price }}</td>
+                    <td>{{ product.discount }}%</td>
+                    <td>{{ product.Stock}}</td>
+                    <td>
+                        <form action="{{url_for('delete_product', product_id=product.id)}}" method="post">
+                            <button class="delete-user">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+             {% endfor %}
+        
+    </table>
+{% endblock %}

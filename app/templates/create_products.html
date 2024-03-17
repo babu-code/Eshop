@@ -1,0 +1,62 @@
+{% extends 'base.html' %} 
+{% block container%} 
+    <div>
+        <h1>Create A New Product</h1>
+        <hr>
+        <form method="post" action="{{ url_for('create_product')}}" enctype="multipart/form-data">
+            <p>
+                {{form.name.label}}
+                {{ form.name() }}
+            </p>
+            <p>
+                {{ form.stock.label }}
+                {{ form.stock() }}
+            </p>
+            <p>
+                {{ form.price.label }}
+                {{ form.price() }}
+            </p>
+            <p>
+                {{ form.discount.label }}
+                {{ form.discount() }}
+            </p>
+
+            <p>
+                {{ form.category.label }}
+                {{ form.category() }}
+            </p>
+            <p>
+                {{ form.description.label }}
+                {{ form.description() }}
+            </p>
+                <div class="form-group">{{ form.image.label }}: {{
+                form.image(style='display:inline;') }}</div>
+               
+            <p>
+            <p>
+                <h5>Add Extra product images?</h5>
+                <p>{{ form.pic_1.label }}
+                    {{form.pic_1() }}
+                </p>
+                <p>
+                    {{ form.pic_2.label }}
+                    {{ form.pic_2() }}
+                </p>
+                <p>
+                    {{ form.pic_3.label }}
+                    {{ form.pic_3() }}
+            
+                </p>
+                <p>
+                    {{ form.pic_4.label }}
+                    {{ form.pic_4() }}
+                </p>
+            </p>
+            
+                {{ form.submit() }}
+            </p>
+            </form>
+
+
+    </div>
+{% endblock container %} 

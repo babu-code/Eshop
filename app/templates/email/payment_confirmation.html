@@ -1,0 +1,29 @@
+<p>Dear {{ user.username }},</p>
+<p>
+    This is a confirmation that your order(invoice:{{orders.orders.invoice}}) has been dispatched.
+    <h2>Your Details:</h2>
+    <p>Username: {{ user.username}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Address: {{user.address}}</p>
+    <p>Phone: {{user.phone}}</p>
+    <p>City: {{user.city}}</p>
+    
+    <H2>Product Details:</H2>
+    {% for _key, product in orders.orders.items() %}
+                <p>Image: <img src="{{ url_for('static', filename='uploads/'+product.image, _external=True)}}" alt=""></p>
+                <p>Name:{{product.name}}</p>
+                <p>Quantity: {{product.quanitity}}</p>
+                <p></p>
+                
+    {% endfor %}
+    <p>{{orders.orders.grand_total}}</p>
+    <p>The product will be delivered to your address({{ user.address }})within the stipulated timeframe</p>
+
+</p>
+<p>Thank you for shopping with us</p>
+
+<p></p>
+<p></p>
+<p>If you have any query don't hesitate to contact us through Eshop-support@gmail.com</p>
+<p>Sincerely,</p>
+<p>The Eshop Team</p>

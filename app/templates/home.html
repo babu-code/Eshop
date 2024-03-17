@@ -1,0 +1,87 @@
+{% extends 'base.html' %} 
+{% block container %}
+
+<h2 style="color:rgb(31, 34, 135)"><a style="color:rgb(31, 34, 135); text-decoration: none;" href="{{url_for('latest_deals')}}"> Latest Deals</a></h2>
+<div class="deals">
+   
+    {% for product in products.items %}
+    <div class="top-pad offset-1 col-sm-10">
+            <div class="card text-center">
+                <small style=" padding:2px;color:white;background-color:green; justify-self: flex-end;">-{{ product.discount }}%</small>
+                        <div class="card-body">
+                            <a href="{{ url_for('product',id=product.id)}}">
+                                <h2>
+                                    {% if product.image_path %}
+                                        <img src="{{url_for('static', filename='uploads/' +product.image_path) }}" class="card-img"/>
+                                    {% endif %}
+                                        <a href="{{ url_for('product', id=product.id)
+                                        }}">{{ product.name }}</a>
+                                        <small style="color:green">Ksh {{ product.selling_price() }}</small>
+                                </h2>
+                            </a>
+                        </div>
+            </div>
+    
+    </div>
+    {% endfor %}
+    
+    <a class="More" href="{{url_for('latest_deals')}}">More... </a>
+
+</div>
+<script async data-id="4252764898" id="chatling-embed-script" type="text/javascript" src="https://chatling.ai/js/embed.js"></script>
+<h2 style="color:rgb(31, 34, 135)"><a style="color:rgb(31, 34, 135) ;text-decoration:none;" href="{{url_for('cheapest_products')}}"> Cheap Deals</a></h2>
+<div class="deals">
+   
+    {% for product in cheapest_products.items %}
+    <div class="top-pad offset-1 col-sm-10">
+            <div class="card text-center">
+                <small style=" padding:2px;color:white;background-color:green; justify-self: flex-end;">-{{ product.discount }}%</small>
+                        <div class="card-body">
+                            <a href="{{ url_for('product',id=product.id)}}">
+                                <h2>
+                                    {% if product.image_path %}
+                                        <img src="{{url_for('static', filename='uploads/' +product.image_path) }}" class="card-img"/>
+                                    {% endif %}
+                                        <a href="{{ url_for('product', id=product.id)
+                                        }}">{{ product.name }}</a>
+                                        <small style="color:green">Ksh {{ product.selling_price() }}</small>
+                                </h2>
+                            </a>
+                        </div>
+            </div>
+    
+    </div>
+    {% endfor %}
+    <a class="More" href="{{url_for('cheapest_products')}}">More...</a>
+</div>
+
+
+
+<h2 style="color:rgb(31, 34, 135)"><a style="color:rgb(31, 34, 135);text-decoration: none;" href="{{url_for('best_deals')}}"> Best Deals</a></h2>
+<div class="deals">
+   
+    {% for item in best_deals.items %}
+    <div class="top-pad offset-1 col-sm-10">
+            <div class="card text-center">
+                <small style=" padding:2px;color:white;background-color:green; justify-self: flex-end;">-{{ item.discount }}%</small>
+                        <div class="card-body">
+                            <a href="{{ url_for('product',id=item.id)}}">
+                                <h2>
+                                    {% if item.image_path %}
+                                        <img src="{{url_for('static', filename='uploads/' +item.image_path) }}" class="card-img" />
+                                    {% endif %}
+                                        <a href="{{ url_for('product', id=item.id)
+                                        }}">{{ item.name }}</a>
+                                        <small style="color:green">Ksh {{ item.selling_price() }}</small>
+                                </h2>
+                            </a>
+                        </div>
+            </div>
+    
+    </div>
+    {% endfor %}
+    <a class="More" href="{{url_for('best_deals')}}">More<span>...</span></a>
+</div>
+
+
+{% endblock %}

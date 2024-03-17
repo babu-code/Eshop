@@ -1,0 +1,151 @@
+2024-01-03 09:22:24,722 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-03 09:23:02,224 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-03 09:31:27,430 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-03 09:32:47,546 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-03 09:33:03,518 ERROR: Exception on /get_order [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 256, in get_order
+    for _, id in items:
+        ^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)
+2024-01-04 15:22:25,872 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-04 15:22:34,577 ERROR: Exception on /view_session [GET] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 177, in view_session
+    return jsonify(session['cart'])
+                   ~~~~~~~^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\sessions.py", line 79, in __getitem__
+    return super().__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'cart'
+2024-01-04 15:24:17,713 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-04 15:27:25,214 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-04 15:49:49,349 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-04 15:50:00,567 ERROR: Exception on /add_to_cart [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 163, in add_to_cart
+    ,"image_file":product.image_file,"description":product.description,
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Product' object has no attribute 'image_file'
+2024-01-04 15:50:37,303 ERROR: Exception on /add_to_cart [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 163, in add_to_cart
+    ,"image_file":product.image_path,"description":product.description,
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Product' object has no attribute 'image_file'
+2024-01-05 11:18:27,055 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-05 11:28:25,992 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-05 11:30:55,164 ERROR: Exception on /get_qty [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 267, in get_qty
+    item={"name":product.name, "price":product.price, "id":product.id, "quantity":qty|1, "gross-price":(int(product.price) * int(qty))}
+                                                                                  ~~~^~
+TypeError: unsupported operand type(s) for |: 'str' and 'int'
+2024-01-05 12:59:25,886 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-05 15:14:11,879 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-05 15:14:54,842 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-05 15:21:00,334 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]
+2024-01-05 15:21:02,929 ERROR: Exception on /reset_password_request [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 62, in reset_password_request
+    send_reset_request(user)
+  File "C:\Py\Eshop\app\utils.py", line 58, in send_reset_request
+    text_body=render_template('email/reset_password.txt', user=user, token=token,
+                                                                           ^^^^^
+NameError: name 'token' is not defined
+2024-01-05 15:23:59,171 ERROR: Exception on /reset_password_request [POST] [in C:\Py\venv\Lib\site-packages\flask\app.py:1414]
+Traceback (most recent call last):
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\venv\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Py\Eshop\app\routes.py", line 62, in reset_password_request
+    send_reset_request(user)
+  File "C:\Py\Eshop\app\utils.py", line 58, in send_reset_request
+    recipients=user.email,
+                           
+NameError: name 'token' is not defined
+2024-01-05 15:24:07,277 INFO: Eshop startup [in C:\Py\Eshop\app\__init__.py:46]

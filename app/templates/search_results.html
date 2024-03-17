@@ -1,0 +1,15 @@
+
+{% for result in results %}
+    <div style="display: flex;">
+        
+        <li style="list-style-type: none;"><img src="{{ url_for('static' ,filename='uploads/'+result.image_path)}}" alt=""></li>
+        <ul style="list-style-type: none;">
+            <!-- <li><a href="">item code : 00000{{ result.id}}</a></li> -->
+            <h2><a href="{{url_for('product', id=result.id)}}">{{ result.name }}</a></h2>
+            <a class="price-tag" href="{{url_for('product', id=result.id)}}">Ksh {{ result.price }}</a></li>
+            <small><a href="{{url_for('category', category_id=result.category.id)}}">{{ result.category.name }}</a></small>
+        </ul>
+       
+    </div>
+{% endfor %}
+

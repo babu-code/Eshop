@@ -1,0 +1,754 @@
+
+
+body {
+    margin:0;
+    padding:0;
+    width:100vw;
+    box-sizing: border-box;
+    background-color:beige;
+    font-family: sans-serif;
+    font-size: 20px;
+    
+   
+    
+   }
+ 
+header{
+    display: flex;
+    background-color: white;
+}
+#menu-bar{
+    display: none;
+    z-index: 2;
+    width: 0%;
+}
+
+#close-menu{
+    width:25px;
+    height:25px;
+    border-radius: 50%;
+    display: none;
+
+}
+header .nav-and-search-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+header .nav-and-search-wrapper .search-wrapper{
+    padding-left:4em;
+    margin-top: 20px;
+    
+}
+header .nav-and-search-wrapper .search-wrapper #search-bar{
+    background-color:rgb(255, 255, 255);
+    height:40px;
+    width:40vw;
+    align-self: center;
+    border-radius: 5px;
+    font-size: 24px;
+    border-color: transparent;
+    box-shadow: lightgrey 1px 1px 2px 2px;
+ 
+}
+header .nav-and-search-wrapper .search-wrapper #search-bar:focus{
+    
+    outline-color: transparent !important;
+    box-shadow: lightblue 1px 1px 2px 2px;
+}
+#flash-msg{
+    position:sticky;
+    background-color: green;
+    color:white;
+    font-size: 24px;
+    margin:10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#logo{
+    width:150px;
+    height:180px;
+    object-fit: cover;
+    
+}
+
+
+.search-wrapper label{
+    align-self: center;
+    margin-right:4px;
+}
+
+.navbar-brand{
+    position: relative;
+}
+.navbar-brand::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:beige;
+    opacity:0.1;
+    z-index: 1;
+    
+}
+nav {
+    display: flex;
+    background-color: white;
+    height: 50%;
+    transition: all 1s ease 0s;
+}
+#nav-links, #user-utils{
+    display: flex;
+    list-style: none;
+    
+}
+#nav-links{
+    margin-right:1%;
+}
+#nav-links li, #user-utils li{
+    margin:2em;
+}
+#nav-links li a, #user-utils li a{
+    text-decoration: none;
+}
+#user-utils li a{
+    display: flex;
+}
+.container{
+    padding-left:20px;
+    position: relative;
+    min-height:80vh;
+}
+.login-form{
+    width:40vw;
+    height:40vh;
+    transform: translate(50% 50%);
+    margin:10px auto 10px auto;
+    box-shadow: -2px -2px grey;
+    border-radius: 10px;
+    padding:50px;
+    background-color: rgb(255, 255, 255);
+ }
+ .login-form small{
+     font-size:14px;
+ }
+ .login-form p{
+     font-size: 16px;
+ }
+ .login-form .form-input{
+     width:20vw;
+     height:20px;
+     border-radius: 10px;
+     font-size: 16px;
+     padding:4px;
+ }
+ .submit-btn{
+     width: 120px;
+     height: 30px;
+     border-radius: 10px;
+     font-size: 16px;
+     background-color: green;
+     color:white;
+     text-transform: lowercase;
+ }
+
+.deals{
+    display:flex;
+    flex-flow: wrap;
+    /* grid-template-columns: ; */
+}
+
+.top-pad{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: white;
+    margin-right:4px;
+    padding: 10px 15px;
+    text-align: center;
+}
+.top{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right:4px;
+    padding: 10px 40px;
+    text-align: center;
+}
+.col-sm-10{
+    background-color: white;
+    margin:6px;
+}
+ a.More{
+    
+    font-size: 18px;
+    align-self: center;
+    text-decoration: none;
+    font-weight: 700;
+    margin:20px;
+    color:white;
+    background-color:green;
+    border-radius: 10px;
+    outline: 4px solid white;
+    display: inline-block;
+    width:250px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+ .More span{
+ font-size: 20px;
+}
+
+.top-pad .offset-1{
+    /* box-shadow: 1px 0px 2px 1px; */
+    border-radius: 4px;
+    margin:40px 10px ;
+    background-color: white;
+    width: 200px;
+    
+}
+.card-body h2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+}
+.card-body  h2 a{
+    font-size: 20px;
+    text-decoration: none;
+    color:black;
+}
+.card-body a h2 .card-img {
+    width:200px;
+    height: 200px;
+    
+}
+.card-body h2 small {
+    font-size: 18px;
+}
+.categories-pad{
+    padding:50px;
+}
+
+.categories li{
+    list-style: none;
+    background-color:white;
+    width: 200px;
+    padding:4px;
+    margin:10px 0;
+}
+.categories-pad li a{
+    text-decoration: none;
+    font-size: 16px;
+    margin:2px;
+}
+.cat-headers{
+    color:black;
+    
+}
+.products-page{
+    padding:100px;
+}
+.products-page img{
+    object-fit: cover;
+}
+.pics img{
+    margin:30px;
+}
+.desc p{
+    font-size: 22px;
+    text-justify: inter-ideograph;
+}
+.qty-label{
+    font-size: 26px;
+}
+.qty-input{
+    margin: 20px;
+    width:40px;
+    outline: 2px solid blue;
+    color:green;
+}
+#add-cart-btn{
+    font-size:30px;
+    width: 300px;
+    height:50px;
+    background-color:rgb(0, 0, 174);
+    color:white;
+    border-radius: 20px;
+}
+
+#add-cart-btn:hover{
+    background-color: green;
+    color:white;
+}
+
+footer{
+    position: relative;
+    height:10vh;
+    width:100vw;
+    background-color: #333;
+    color:white;
+    
+    
+
+
+}
+
+.items{
+    display: flex;
+    margin:40px;
+    background-color: white;
+}
+
+.items li{
+    list-style: none;
+}
+.items form{
+    margin-left:auto;
+    align-self: center;
+}
+
+.items form button{
+    width:200px;
+    height:50px;
+    font-size: 18px;
+}
+.items form #remove-button{
+    background-color:rgb(157, 44, 44);
+    color:white;
+}
+.items form #checkout-button{
+    background-color:rgb(0, 0, 174);
+    color:white;
+}
+table{
+    
+    width:80vw;
+    border-radius: 5px;
+    padding:20px;
+
+}
+.table{
+    border:1px solid grey;
+    border-radius: 5px;
+    padding:30px;
+    border-collapse: collapse;
+}
+.table th{
+    background-color: lightgreen;
+   
+}
+.table tr td{
+    color:grey;
+    border-bottom:1px solid lightblue;
+   
+
+}
+table th{
+    background-color: white;
+    color:black;
+}
+table tbody:nth-child(3){
+    background-color: rgb(191, 191, 255);
+    color:black;
+    border-bottom: 1px solid black;
+}
+
+table tr td a{
+    color:blue;
+    text-decoration: none;
+}
+
+table tr td form button{
+    width:100px;
+}
+.delete-user{
+    width:100px;
+    height:35px;
+    background-color:crimson;
+    color:white;
+}
+
+#results{
+   z-index: 2;
+   position: absolute;
+}
+#results div {
+    background-color: white;
+    margin:20px 0;
+}
+#results div ul{
+    list-style: none;
+}
+#results div ul li{
+    margin:20px;
+    list-style-type: none;
+}
+#results div ul a{
+    text-decoration: none;
+    color:rgb(0, 113, 183)
+}
+#results div ul a.price-tag{
+    color:green;
+    margin-right: 20px;
+}
+#results div ul small{ 
+    font-size: 12px;
+}
+.modal{
+    width:75vw;
+    position: relative;
+    z-index:2;
+}
+
+.overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(3px);
+        z-index: 1;
+    }
+.hidden{
+    display: none;
+}
+
+
+sup{
+    display: inline-block;
+    width:14px;
+    height:14px;
+    margin-left:4px;
+    background-color: red;
+    border-radius: 50% 50%;
+    color:white;
+    font-size: 12px;
+    text-align: center;
+}
+input[type=number]{
+    height:30px;
+    font-size: 18px;
+    border-color:lightgrey;
+}
+input[type=number]:focus{
+    border-color: red;
+}
+input[type=search]:focus{
+   width:150px;
+   height: 150px;
+}
+.other-products{
+    margin-top:80px;
+}
+.other-products .products-like-this{
+    display: flex;
+}
+.order-details{
+    margin:10px 10 20px 10px;
+    background-color: rgb(245, 245, 245);
+    padding:10px;
+    border-radius: 4px;
+}
+#mpesa-btn{
+    background:linear-gradient(rgb(60, 216, 60),rgb(60, 216, 60),rgb(82, 155, 82));
+    color:white;
+    font-weight: 700;
+    border: 1px solid white;
+    padding:2px;
+    border-radius: 6px;
+    width:120px;
+    height: 35px;
+    cursor: pointer;
+}
+.phone-number-modal{
+    display: none;
+    position: absolute;
+    top:20%;
+    left:30%;
+    background-color:white;
+    padding:10px;
+    border-radius: 6px;
+}
+.phone-number-modal form fieldset{
+    border-radius: 6px;
+}
+.phone-number-modal form input{
+    width: 80px;
+    height: 16px;
+}
+.phone-number-modal #modal-pay-btn{
+    background-color: rgb(49, 144, 49);
+    text-transform: lowercase;
+    color:white;
+    width:50px;
+    height:20px;
+    border-radius:4px;
+    font-size: 14px;
+}
+.admin-home{
+width:60vw;
+margin: auto auto;
+}
+.admin-home h2{
+    text-align: center;
+}
+.admin-home ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px;
+    flex-wrap: wrap;
+}
+.admin-home ul li {
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 2px 4px grey;
+    margin: 20px;
+   
+    
+}
+.admin-home ul li a{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.admin-home ul li a p{
+    text-align:  center;
+    
+}
+.thanks{
+    width:60vw;
+    height: 40vh;
+    background-color: white;
+    box-shadow: 2px 4px grey;
+    border-radius: 10px;
+    padding:5px;
+    margin-top: 10%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+a.continue-shopping {
+    text-decoration: none;
+    margin-top: 10%;
+    font-size: 16px;
+    
+    margin-left: 10%;
+}
+.a-white{
+ color:blue;
+ text-decoration: none;
+}
+
+#check-txt{
+    font-size: x-large;
+    text-align: center;
+    color:green;
+    -webkit-text-stroke: 2px solid white;
+    
+}
+#check-img{
+    border-radius: 50%;
+    margin-left:40%;
+}
+#check-confirmation{
+    text-align: center;
+    font-size: large;
+}
+
+@media (max-width:1000px) {
+    body {
+        width:100%;
+        font-size: 12px;
+        overflow-x: hidden;
+       
+       }
+       header{
+        width: 100%;
+        overflow-x: hidden;
+       }
+       #logo{
+        width:80px;
+        height: 80px;
+       }
+       nav {
+        position: absolute;
+        right:-400px;
+        flex-direction: column;
+        padding:0;
+        height: 100%;
+        background-color:rgb(237, 237, 237);
+        display: none;
+        transition: all 1s ease 0s;
+        
+        
+       }
+       #nav-links, #user-utils{
+        flex-direction: column;
+       }
+       #navlinks{
+        width: 100%;
+       }
+       sup{
+        width: 10px;
+        height: 10px;
+        font-size: 8px;
+       }
+        .deals{
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(165px,auto));
+            grid-column-gap: 10px;
+          padding:5px;
+
+        }
+        header .nav-and-search-wrapper .search-wrapper{
+            padding-left: 0;
+            padding-top:20px;
+        }
+        header .nav-and-search-wrapper .search-wrapper #search-bar {
+            width:55vw;
+            height: 20px;
+            font-size: 14px;
+            margin-left:10px;
+            align-self:flex-end;
+        }
+        /* header .nav-and-search-wrapper .search-wrapper #search-bar::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            background-color: red;
+            position: relative;
+            left:10px;
+            width: 20px;
+            height: 20px;
+            border-radius:50%;
+            
+        } */
+        header  #menu-bar{
+            display: block;
+            width:25px;
+            height:25px;
+            position: absolute;
+            top:10px;
+            right: 10px;
+        }
+        #flash-msg{
+            position:sticky;
+            background-color: green;
+            color:white;
+            font-size: 12px;
+            margin:4px;
+            text-align: center;
+            border-radius: 2px;
+        }
+        .top-pad{
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            gap:2px;
+            overflow-x: hidden;
+        }
+        .top-pad .offset-1{
+            width: auto;
+        }
+        .top-pad .offset-1 .col-sm-10{
+            /* box-shadow: 1px 0px 2px 1px; */
+            border-radius: 4px;
+            margin:20px 4px ;
+            background-color: white;
+            width:100px;
+            
+        }
+        .card{
+            background-color: white;
+            width: 162px;
+        }
+         .card-img {
+            width:120px;
+            
+            object-fit: cover;
+            
+        }
+        .card-body h2 a, .card-body h2 small{
+            font-size: 14px;
+            
+        }
+        
+        .col-sm-10{
+            width: 165px;
+            padding:2px;
+            margin:6px;
+        }
+        .products-page{
+            padding:0;
+        }
+        .desc-wrapper .desc p{
+            font-size: 12px;
+        }
+         .qty-label{
+            font-size: 14px;
+        }
+        .desc-wrapper form #add-cart-btn{
+            width:120px;
+            height:20px;
+            font-size:14px;
+            border-radius:5px ;
+        }
+        .product-img{
+            width:75vw;
+        }
+        .other-products .products-like-this{
+            display: flex;
+        }
+        .other-products .products-like-this .top-pad{
+            display: flex;
+            
+        }
+        .table{
+            width:90%;
+            font-size: 12px;
+        }
+        .table tr{
+            text-align: center;
+        }
+        tr td{
+            padding:1px;
+        }
+        input[type=number]{
+            font-size: 13px;
+            width:20px;
+        }
+        table button[type=submit]{
+            width:40px;
+            padding:2px;
+            font-size: 10px;
+           
+        }
+        #results div li img{
+            width:100px;
+            height: 100px;
+        }
+        a.More{
+            display: inline;
+            width:80px;
+            height:auto;
+            text-align: center;
+            background-color: green;
+            color:white;
+            border-radius: 5px;
+            padding:2px;
+            outline: 2px solid lightskyblue
+        }
+        
+
+}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %} 
+{% block container %} 
+    <h1 class="cat-headers">Create A New Category</h1>
+        <hr>
+    <form action="{{ url_for('create_category') }}" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}
+            {{ form.name() }}
+        </p>
+        <p>
+           <button type="submit">Submit</button>
+        </p>
+    </form>
+{% endblock container %}
